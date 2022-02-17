@@ -11,14 +11,18 @@ server:
 
 graphql:
   servlet:
+    # Maxima profundidad de las queries
     maxQueryDepth: 100
+    # Habilita los Exception Handlers
     exception-handlers-enabled: true
     tracingEnabled: false
+  # Configuración de graphql playground
   playground:
+    enabled: true
     headers:
       Authorization: Bearer TOKEN
       user_id: IDP|Philip
-      user_roles: get:bank_account
+      user_roles: get:bank_account,get:bank_account_balance
     tabs:
       - name: Get Bank Account
         query: classpath:playground/get_bank_account.graphql
@@ -32,8 +36,9 @@ graphql:
       - name: Bank Account Subscription
         query: classpath:playground/subscribe_to_bank_account.graphql
         variables: classpath:playground/bank_account_variables.json
-    enabled: true
+
   extended-scalars: NonNegativeInt, Date, DateTime
+# Configuración de voyager
 voyager:
   enabled: true
 

@@ -1,12 +1,13 @@
 package com.learn.graphql.cache;
 
-import java.util.List;
 import lombok.Value;
+
+import java.util.List;
 
 @Value
 public class RequestKey {
 
-  String userId;
-  List<String> queries;
+    String userId;
+    List<String> queries;
 
 }

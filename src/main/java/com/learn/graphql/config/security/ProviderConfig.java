@@ -8,12 +8,12 @@ import org.springframework.security.web.authentication.preauth.PreAuthenticatedG
 @Configuration
 public class ProviderConfig {
 
-  @Bean
-  public PreAuthenticatedAuthenticationProvider preAuthenticatedAuthenticationProvider() {
-    var preAuthProvider = new PreAuthenticatedAuthenticationProvider();
-    preAuthProvider.setPreAuthenticatedUserDetailsService(
-        new PreAuthenticatedGrantedAuthoritiesUserDetailsService());
-    return preAuthProvider;
-  }
+    @Bean
+    public PreAuthenticatedAuthenticationProvider preAuthenticatedAuthenticationProvider() {
+        var preAuthProvider = new PreAuthenticatedAuthenticationProvider();
+        preAuthProvider.setPreAuthenticatedUserDetailsService(
+                new PreAuthenticatedGrantedAuthoritiesUserDetailsService());
+        return preAuthProvider;
+    }
 
 }
