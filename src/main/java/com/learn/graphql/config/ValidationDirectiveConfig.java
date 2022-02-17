@@ -15,9 +15,7 @@ public class ValidationDirectiveConfig {
     @Bean
     public ValidationSchemaWiring validationSchemaWiring() {
         // Contains the default validation @Directive constraints
-        var validationRules = ValidationRules.newValidationRules()
-                .onValidationErrorStrategy(OnValidationErrorStrategy.RETURN_NULL)
-                .build();
+        var validationRules = ValidationRules.newValidationRules().onValidationErrorStrategy(OnValidationErrorStrategy.RETURN_NULL).build();
 
         // Rewrites your data fetchers so that it's arguments are validated prior method execution
         return new ValidationSchemaWiring(validationRules);
